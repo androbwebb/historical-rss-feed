@@ -11,7 +11,6 @@ def get_items(page=2):
 
 
 def add_entry(fg, entry):
-    print(entry)
     fe = fg.add_entry()
     fe.id(entry['link'])
     fe.title(entry['title'])
