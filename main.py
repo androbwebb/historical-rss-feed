@@ -37,10 +37,11 @@ def build_feed():
     for entry in feed['entries']:
         add_entry(fg, entry)
 
-    page = 2
+    page = 131
     while feed:
         next_entries = get_items(page)
         if next_entries:
+            print('Adding page {} with {} entries'.format(page, len(next_entries)))
             for entry in next_entries:
                 add_entry(fg, entry)
             page += 1
@@ -51,5 +52,4 @@ def build_feed():
     return
 
 if __name__ == '__main__':
-    feed = build_feed()
-    print(feed)
+    build_feed()
