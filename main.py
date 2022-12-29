@@ -37,7 +37,7 @@ def build_feed():
     for entry in feed['entries']:
         add_entry(fg, entry)
 
-    page = 131
+    page = 2
     while feed:
         next_entries = get_items(page)
         if next_entries:
