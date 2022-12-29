@@ -3,7 +3,6 @@ name: Overwrite some file
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:
 
 jobs:
   build:
