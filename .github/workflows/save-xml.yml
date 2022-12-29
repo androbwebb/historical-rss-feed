@@ -1,6 +1,7 @@
 name: Write RSS feed
 
 on:
+  workflow_dispatch:
   push:
     branches: [ master ]
   schedule:
