@@ -1,8 +1,8 @@
-name: Overwrite some file
+name: Write RSS feed
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:
