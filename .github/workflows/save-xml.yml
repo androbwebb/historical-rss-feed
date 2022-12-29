@@ -32,14 +32,16 @@ jobs:
         run: |
           pipenv install --deploy --dev
 
-      - name: Run main script
-        run: |
-          pipenv run python main.py
+  generate:
+    - name: Run main script
+      run: |
+        pipenv run python main.py
 
-      - name: Commit & Push
-        uses: Andro999b/push@v1.3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-          force: true
-          message: 'Overwritten by Github Actions - ${date}'
+  save:
+    - name: Commit & Push
+      uses: Andro999b/push@v1.3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
+        force: true
+        message: 'Overwritten by Github Actions - ${date}'
