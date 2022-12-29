@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  run:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -32,20 +32,10 @@ jobs:
         run: |
           pipenv install --deploy --dev
 
-  generate:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: Run main script
         run: |
           pipenv run python main.py
 
-  save:
-    needs:
-      - build
-      - generate
-    runs-on: ubuntu-latest
-    steps:
       - name: Commit & Push
         uses: Andro999b/push@v1.3
         with:
