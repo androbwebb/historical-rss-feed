@@ -12,14 +12,14 @@ def get_items(url, page=2):
 
 def add_entry(fg, entry):
     fe = fg.add_entry()
-    fe.id(entry['link'])
-    fe.title(entry['title'])
-    fe.link(href=entry['link'])
-    fe.author(entry['author_detail'])
-    fe.published(entry['published'])
-    fe.summary(entry['summary'])
-    fe.content(entry['content'][0]['value'])
-    fe.comments(entry['comments'])
+    fe.id(entry.get('link'))
+    fe.title(entry.get('title'))
+    fe.link(href=entry.get('link'))
+    fe.author(entry.get('author_detail'))
+    fe.published(entry.get('published'))
+    fe.summary(entry.get('summary'))
+    fe.content(entry['content'][0]['value'], type='CDATA')
+    fe.comments(entry.get('comments'))
 
 
 def build_feed(url, filename):
