@@ -33,6 +33,7 @@ jobs:
           pipenv install --deploy --dev
 
   generate:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Run main script
@@ -40,6 +41,9 @@ jobs:
           pipenv run python main.py
 
   save:
+    needs:
+      - build
+      - generate
     runs-on: ubuntu-latest
     steps:
       - name: Commit & Push
