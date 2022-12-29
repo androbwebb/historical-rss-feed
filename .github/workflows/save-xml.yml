@@ -3,6 +3,8 @@ name: Write RSS feed
 on:
   push:
     branches: [ master ]
+  schedule:
+    - cron: '5 12 * * 2,4,6'
 
 jobs:
   run:
@@ -36,10 +38,22 @@ jobs:
         run: |
           pipenv run python main.py
 
-      - name: Commit & Push
-        uses: Andro999b/push@v1.3
+      - name: Commit files
+        id: commit
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "github-actions"
+          git add --all
+          if [-z "$(git status --porcelain)"]; then
+             echo "::set-output name=push::false"
+          else
+             git commit -m "Add changes" -a
+             echo "::set-output name=push::true"
+          fi
+        shell: bash
+
+      - name: Push changes
+        if: steps.commit.outputs.push == 'true'
+        uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-          force: true
-          message: 'Overwritten by Github Actions - ${date}'
+           github_token: ${{ secrets.GITHUB_TOKEN }}
