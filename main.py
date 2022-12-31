@@ -55,5 +55,11 @@ def build_feed(url, filename):
 
 
 if __name__ == '__main__':
-    build_feed('https://www.nomadicmatt.com/feed/', 'nomadicmatt.xml')
-    build_feed('https://tynan.com/feed/', 'tynan.xml')
+    for feed, filename in [
+     ['https://www.nomadicmatt.com/feed/', 'nomadicmatt.xml'],
+     ['https://tynan.com/feed/', 'tynan.xml'],
+    ]:
+        try:
+            build_feed(feed, filename)
+        except Exception as e:
+            print(e)
