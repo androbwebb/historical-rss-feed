@@ -19,7 +19,7 @@ class CrackedPodcastItem:
         self.id = data.get('id')
         self.description_plain = data.get('description_plain')
         self.description_html = data.get('description_html')
-        self.title = data.get('title')
+        self.title = data.get('title').replace('&', '&amp;')
         self.pub_date = data.get('pub_date')
         self.url = data.get('url')
         self.web_url = data.get('web_url')
@@ -79,7 +79,7 @@ def scrape_feed(feed_url):
             guid = episode['rss_guid']
             id = episode['id']
             description_plain = episode['description_plain']
-            description_html = episode['description_is_html']
+            description_html = episode['description']
             title = episode['title']
             pub_date = episode['created_at']
 
