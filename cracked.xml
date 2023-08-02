@@ -8,9 +8,9 @@
     <managingEditor>podcasts@literally.media (Literally Media)</managingEditor>
     <copyright>© Literally Media LTD.</copyright>
     <generator>ART19</generator>
-    <atom:link href="https://rss.art19.com/the-cracked-podcast" rel="self" type="application/rss+xml"/>
-    <link>https://www.cracked.com/podcast/show-the-cracked-podcast-archive/</link>
-    <itunes:new-feed-url>https://rss.art19.com/the-cracked-podcast-archive</itunes:new-feed-url>
+    <atom:link href="https://raw.githubusercontent.com/androbwebb/historical-rss-feed/master/cracked.xml" rel="self" type="application/rss+xml"/>
+    <link>https://raw.githubusercontent.com/androbwebb/historical-rss-feed/master/cracked.xml</link>
+    <itunes:new-feed-url>https://raw.githubusercontent.com/androbwebb/historical-rss-feed/master/cracked.xml</itunes:new-feed-url>
     <itunes:owner>
       <itunes:name>Literally Media</itunes:name>
       <itunes:email>podcasts@literally.media</itunes:email>
