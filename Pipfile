@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 feedparser = "*"
 feedgen = "*"
+bs4 = "*"
+requests = "*"
 
 [dev-packages]
 
