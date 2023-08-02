@@ -100,17 +100,17 @@ def scrape_feed(feed_url):
     with open("./cracked.xml", "w") as f:
         f.write(f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:art19="https://art19.com/xmlns/rss-extensions/1.0" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0/" version="2.0">
-  <channel>
-    <title>The Cracked Podcast</title>
+    <channel>
+    <title>The Cracked Podcast Archive</title>
     <description>
       <![CDATA[<p>Facts, jokes, and more from the Internet’s leading comedy website, Cracked.com. Every week, host Alex Schmidt brings together comedians, authors, scientists, and Cracked staffers, to celebrate the awesome truth that being alive is more interesting than people think it is. Fill your week and your brain with hilarious, mind-blowing revelations that’ll make you the most interesting person in every room you’re in.</p>]]>
     </description>
     <managingEditor>podcasts@literally.media (Literally Media)</managingEditor>
     <copyright>© Literally Media LTD.</copyright>
     <generator>ART19</generator>
-    <atom:link href="https://rss.art19.com/the-cracked-podcast" rel="self" type="application/rss+xml"/>
-    <link>https://www.cracked.com/podcast/show-the-cracked-podcast/</link>
-    <itunes:new-feed-url>https://rss.art19.com/the-cracked-podcast</itunes:new-feed-url>
+    <atom:link href="https://raw.githubusercontent.com/androbwebb/historical-rss-feed/master/cracked.xml" rel="self" type="application/rss+xml"/>
+    <link>https://raw.githubusercontent.com/androbwebb/historical-rss-feed/master/cracked.xml</link>
+    <itunes:new-feed-url>https://raw.githubusercontent.com/androbwebb/historical-rss-feed/master/cracked.xml</itunes:new-feed-url>
     <itunes:owner>
       <itunes:name>Literally Media</itunes:name>
       <itunes:email>podcasts@literally.media</itunes:email>
@@ -128,8 +128,8 @@ def scrape_feed(feed_url):
     <itunes:image href="https://content.production.cdn.art19.com/images/45/dc/e8/be/45dce8be-edd1-49ed-82a3-5efe662accbf/3b08a0384c4ae92a2ea996d027bbc5964c1763bf1cde978ac9efa208f58f0c9d07702e0aa152295eca574ee4c67c6e57e05068b423d517a4428f8fab143f28f2.jpeg"/>
     <image>
       <url>https://content.production.cdn.art19.com/images/45/dc/e8/be/45dce8be-edd1-49ed-82a3-5efe662accbf/3b08a0384c4ae92a2ea996d027bbc5964c1763bf1cde978ac9efa208f58f0c9d07702e0aa152295eca574ee4c67c6e57e05068b423d517a4428f8fab143f28f2.jpeg</url>
-      <link>https://www.cracked.com/podcast/show-the-cracked-podcast/</link>
-      <title>The Cracked Podcast</title>
+      <link>https://raw.githubusercontent.com/androbwebb/historical-rss-feed/master/cracked.xml</link>
+      <title>The Cracked Podcast Archive</title>
     </image>
 
     {"".join([item.to_xml() for item in items])}
