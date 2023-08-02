@@ -18,7 +18,7 @@ class CrackedPodcastItem:
         self.guid = data.get('guid')
         self.id = data.get('id')
         self.description_plain = data.get('description_plain').replace('R&R', 'R&amp;R')
-        self.description_html = data.get('description_html')
+        self.description_html = data.get('description_html').replace('R&R', 'R&amp;R')
         self.title = data.get('title').replace('&', '&amp;')
         self.pub_date = data.get('pub_date')
         self.url = data.get('url')
